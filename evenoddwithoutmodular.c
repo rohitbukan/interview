@@ -1,18 +1,17 @@
 #include <stdio.h>
-
-int isEven(int n)
-{
-return (!(n & 1));
-}
-
 int main()
 {
-int n;
-printf("\nEnter a number :");
-scanf("%d",&n);
-printf("\n");
-printf("\n%d is ",n);
-isEven(n) ? printf("Even\n") : printf("Odd\n");
-
-return 0;
+    int number;
+ 
+    printf("Enter a number to check even or odd");
+    scanf("%d", &number);
+ 
+    if((number & 1)==0)
+          printf("%d is even.", number);
+    else
+        printf("%d is odd.", number);
+        
+ 
+    getch();
+    
 }
