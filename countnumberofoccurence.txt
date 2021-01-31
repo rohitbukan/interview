@@ -1,23 +1,31 @@
-import java.util.HashMap;
+#include <stdio.h>
  
-public class FinalCountWords {
+int main()
+{
+	int arr[10], i, j, Size, Count = 0;
+	
+	printf("\n Please Enter Number of elements in an array  :   ");
+	scanf("%d", &Size);
+	
+	printf("\n Please Enter %d elements of an Array  :  ", Size);
+	for (i = 0; i < Size; i++)
+	{
+    	scanf("%d", &arr[i]);
+   	}     
  
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        String str = "rohit bukan bukan rohit";
-        String[] split = str.split(" ");
-         
-                HashMap<String,Integer> map = new HashMap<String,Integer>();
-        for (int i=0; i<split.length; i++) {
-            if (map.containsKey(split[i])) {
-                int count = map.get(split[i]);
-                map.put(split[i], count+1);
-            }
-            else {
-                map.put(split[i], 1);
-            }
-        }
-        System.out.println(map);
-    }
- 
+	for (i = 0; i < Size; i++)
+	{
+		for(j = i + 1; j < Size; j++)
+		{
+    		if(arr[i] == arr[j])
+    		{
+    			Count++;
+				break;
+			}
+		}
+	}
+
+ 	printf("\n Total Number of Duplicate Elements in this Array  =  %d ", Count);
+	     
+ 	return 0;
 }
