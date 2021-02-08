@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+
+{
+        int n=0, len ,t;
+        int currcount = 0;
+        int mincount=0;
+
+        char *ch=(char*)malloc(sizeof(char)*100);
+       
+        scanf("%s",ch);
+        
+        len=strlen(ch);
+
+        while(n<len)
+        {
+                currcount=0;
+                if
+                (ch[n]=='1')
+
+                {
+                        currcount++;
+                        t=n+1;
+                        while(ch[t]=='1')
+                        {
+                                currcount++;
+                                t++;
+                        }
+                if
+                (currcount < mincount)
+                mincount=currcount;
+
+                }
+                n++;
+        }
+        if(mincount!=0)
+        
+        printf("%d \n",mincount);
+     
+    else
+        printf("-1");  
+        free(ch);
+        return 0;
+}
